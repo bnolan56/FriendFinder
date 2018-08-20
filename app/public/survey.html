@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Overwatch Friend Finder</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+
+    <main class="container">
+
+      <h2>Overwatch Questions</h2>
+
+      <h3>About You</h3>
+
+      <label>Name:</label>
+      <input type="text" id="name" class="form-control" required>
+
+      <h4>Link to Photo Image (Required)</h4>
+      <input type="text" id="photo" class="form-control" required>
+
+      <hr>
+
+      <h3>Question 1</h3>
+
+      <h4>Are you willing to switch heroes for a better team comp?</h4>
+      <select class="chosen-select" id="q1">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>
+        <strong>Question 2</strong>
+      </h3>
+      <h4>Are you a hanzo main, or do you like to be a team player?</h4>
+      <select class="chosen-select" id="q2">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+
+      <h3>
+        <strong>Question 3</strong>
+      </h3>
+      <h4>You can handle the pressure when the team is down and you need to hold the payload or point.</h4>
+      <select class="chosen-select" id="q3">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+
+      <h3>
+        <strong>Question 4</strong>
+      </h3>
+      <h4>Are you moving with the payload?</h4>
+      <select class="chosen-select" id="q4">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+
+      <h3>
+        <strong>Question 5</strong>
+      </h3>
+      <h4>Do you get salty at Widows or Mei's picking you off?</h4>
+      <select class="chosen-select" id="q5">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+
+      <h3>
+        <strong>Question 6</strong>
+      </h3>
+      <h4>Your team comp isn't prepared for dive comp on defense, you need a support healer. Do you switch?</h4>
+      <select class="chosen-select" id="q6">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+
+      <h3>
+        <strong>Question 7</strong>
+      </h3>
+      <h4>Competitive is where you go all out.</h4>
+      <select class="chosen-select" id="q7">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>
+        <strong>Question 8</strong>
+      </h3>
+      <h4>You often carry your team.</h4>
+      <select class="chosen-select" id="q8">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>
+        <strong>Question 9</strong>
+      </h3>
+      <label>You one trick charactors.</label>
+      <select class="chosen-select" id="q9">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 1</h3>
+      <label>You prefer attack over defence.</label>
+      <select class="chosen-select" id="q10">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"> <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+    </main>
+
+    <!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">
+              <strong>Best Match</strong>
+            </h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $('#submit').on('click', function() {
+      let values = [];
+      let name = $('#name').val();
+      let photoUrl = $('#photo').val();
+
+      for (let i = 1; i <= 10; i++) {
+        if (!isNaN(parseInt($("#q" + i + " option:selected").attr('value'))))
+
+        values.push(parseInt($("#q" + i + " option:selected").attr('value')));
+      };
+
+      if (values.length == 10 && name != "" && photoUrl != "") {
+        console.log(values, name, photoUrl);
+        $('#results-modal').modal('show');
+      } else {
+        console.log("not all values filled in");
+      };
+    })
+  </script>
+</html>
