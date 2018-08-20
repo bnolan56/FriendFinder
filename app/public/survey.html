@@ -16,152 +16,172 @@
 
     <main class="container">
 
-      <h2>Overwatch Questions</h2>
+      <div class="row">
+        <div class="col l12 l6">
+           <div class="card grey lighten-4">
+             <div class="card-content">
+               <span class="card-title">Overwatch Questions</span>
+               <h6>About You</h6>
+                <!-- <form> -->
+                   <label>Name:</label>
+                   <input type="text" id="name" class="form-control" required>
 
-      <h3>About You</h3>
+                   <label>Link to Photo Image (Required)</label>
+                   <input type="text" id="photo" class="form-control" required>
 
-      <label>Name:</label>
-      <input type="text" id="name" class="form-control" required>
+                   <h6>Question 1</h6>
 
-      <h4>Link to Photo Image (Required)</h4>
-      <input type="text" id="photo" class="form-control" required>
+                  <p>Are you willing to switch heroes for a better team comp?</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q1">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="3">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
-      <hr>
+                  <h6>Question 2</h6>
 
-      <h3>Question 1</h3>
-
-      <h4>Are you willing to switch heroes for a better team comp?</h4>
-      <select class="chosen-select" id="q1">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
-
-      <h3>
-        <strong>Question 2</strong>
-      </h3>
-      <h4>Are you a hanzo main, or do you like to be a team player?</h4>
-      <select class="chosen-select" id="q2">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
-
-
-      <h3>
-        <strong>Question 3</strong>
-      </h3>
-      <h4>You can handle the pressure when the team is down and you need to hold the payload or point.</h4>
-      <select class="chosen-select" id="q3">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <p>You like to be a hanzo main?</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q2">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="3">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
 
-      <h3>
-        <strong>Question 4</strong>
-      </h3>
-      <h4>Are you moving with the payload?</h4>
-      <select class="chosen-select" id="q4">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <h6>Question 3</h6>
+
+                  <p>You can handle the pressure when the team is down and you need to hold the payload or point.</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q3">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
 
-      <h3>
-        <strong>Question 5</strong>
-      </h3>
-      <h4>Do you get salty at Widows or Mei's picking you off?</h4>
-      <select class="chosen-select" id="q5">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <h6>Question 4</h6>
+
+                  <p>Are you moving with the payload?</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q4">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
 
-      <h3>
-        <strong>Question 6</strong>
-      </h3>
-      <h4>Your team comp isn't prepared for dive comp on defense, you need a support healer. Do you switch?</h4>
-      <select class="chosen-select" id="q6">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <h6>Question 5</h6>
+
+                  <p>Do you get salty at Widows or Mei's picking you off?</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q5">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
 
-      <h3>
-        <strong>Question 7</strong>
-      </h3>
-      <h4>Competitive is where you go all out.</h4>
-      <select class="chosen-select" id="q7">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <h6>Question 6</h6>
 
-      <h3>
-        <strong>Question 8</strong>
-      </h3>
-      <h4>You often carry your team.</h4>
-      <select class="chosen-select" id="q8">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <p>Your team comp isn't prepared for dive comp on defense, you need a support healer. Do you switch?</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q6">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
 
-      <h3>
-        <strong>Question 9</strong>
-      </h3>
-      <label>You one trick charactors.</label>
-      <select class="chosen-select" id="q9">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
 
-      <h3>Question 1</h3>
-      <label>You prefer attack over defence.</label>
-      <select class="chosen-select" id="q10">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
+                  <h6>Question 7</h6>
 
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"> <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+                  <p>Competitive is where you go all out.</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q7">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+
+                  <h6>Question 8</h6>
+
+                  <p>You often carry your team.</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q8">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+
+                  <h6>Question 9</h6>
+
+                  <p>You like hit-scan characters.</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q9">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="3">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+
+                  <h6>Question 10</h6>
+
+                  <p>You prefer attack over defense.</p>
+                  <div class="input-field l12">
+                    <select class="chosen-select" id="q10">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="3">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                <!-- </form> -->
+             </div>
+
+             <div class="card-action">
+              <a href="/survey" id="submit" class="waves-effect waves-light btn blue-grey"><i class="material-icons right dp48">question_answer</i>Go to survey</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Modal -->
@@ -171,17 +191,17 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h2 class="modal-title">
-              <strong>Best Match</strong>
-            </h2>
+            <button type="button" class="close waves-effect waves-light btn blue-grey" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Best Match</h2>
           </div>
+
           <div class="modal-body">
             <h2 id="match-name"></h2>
             <img id="match-img" src="" alt="">
           </div>
+
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" cclass="waves-effect waves-light btn blue-grey" data-dismiss="modal">Close</button>
           </div>
         </div>
 
@@ -190,7 +210,9 @@
   </body>
 
   <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
   <script type="text/javascript">
     $('#submit').on('click', function() {
       let values = [];
@@ -205,9 +227,9 @@
 
       if (values.length == 10 && name != "" && photoUrl != "") {
         console.log(values, name, photoUrl);
-        $('#results-modal').modal('show');
+        $('#results-modal').modal('open');
       } else {
-        console.log("not all values filled in");
+        console.log("Please fill in all values.");
       };
     })
   </script>

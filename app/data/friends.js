@@ -3,8 +3,8 @@
 
 exports.owFriends = [
   {
-  "name": ,
-  "photoUrl": ,
-  "values":
+  "name": "",
+  "photoUrl": "",
+  "values": ""
   }
 ]
