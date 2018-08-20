@@ -24,10 +24,10 @@
                <h6>About You</h6>
                 <form>
                    <label>Name:</label>
-                   <input type="text" id="name" class="form-control" required>
+                   <input type="text" id="name" class="form-control validate" required>
 
                    <label>Link to Photo Image (Required)</label>
-                   <input type="text" id="photo" class="form-control" required>
+                   <input type="text" id="photo" class="form-control validate" required>
 
                    <h6>Question 1</h6>
 
@@ -206,44 +206,85 @@
 
       </div>
     </div>
-  </body>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="js/init.js"></script>
   <script type="text/javascript">
-    $('#submit').on('click', function(event) {
-      event.preventDefault();
-      
-      // Gather user inputs
-      let userInput = {
-        name: $('#name').val().trim(),
-        photoUrl: $('#photo').val().trim(),
-        values:[
-          $('#q1').val(),
-          $('#q2').val(),
-          $('#q3').val(),
-          $('#q4').val(),
-          $('#q5').val(),
-          $('#q6').val(),
-          $('#q7').val(),
-          $('#q8').val(),
-          $('#q9').val(),
-          $('#q10').val()
-        ]
-      };
-      // console.log('userInput = ' + JSON.stringify(userInput));
-      // Add user inputs to friends list
-      $.post('/api/friends', userInput)
-          .done(function(data) {
-            // console.log('response = ' + JSON.stringify(data));
-            // Set the name and image values of friend match
-            $('#userMatch').html(data.matchName);
-          $("#userMatchImage").attr("src", data.matchImage);
-          // Pop open the modal dialog
-            $('#modal1').modal('open');
+    $(document).ready(function() {
+      $("#submit").on("click", function() {
+        console.log('submit button has been clicked');
+        event.preventDefault();
+
+        //form validation
+        function validateForm() {
+          let isValid = true;
+
+          $('.validate').each(function() {
+            if ($(this).val() === '') {
+              isValid = false;
+            }
           });
+
+          $('.browser-default').each(function() {
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+          });
+
+          return isValid;
+        }
+        //if everything is filled
+        if (validateForm() == true) {
+          //creates a new friend from the values submitted
+          let userInput = {
+            name: $('#name').val().trim(),
+            photoUrl: $('#photo').val().trim(),
+            values: [
+              $('#q1').val(),
+              $('#q2').val(),
+              $('#q3').val(),
+              $('#q4').val(),
+              $('#q5').val(),
+              $('#q6').val(),
+              $('#q7').val(),
+              $('#q8').val(),
+              $('#q9').val(),
+              $('#q10').val()
+            ]
+          };
+
+          console.log('userInput = ' + JSON.stringify(userInput));
+          //Grabs current URL of website
+          let currentURL = window.location.origin;
+
+          // POSTs to api/friends
+          $.post(currentURL + "/api/friends", userInput, function(data) {
+            $("#name").html(data.name);
+            $("#photo").attr("src", data.photoUrl);
+          });
+
+          // Show the modal with the best match
+          $('#modal1').modal();
+
+          //clears form once submitted
+          $('#name').val("");
+          $('#photo').val("");
+          $('#q1').val("");
+          $('#q2').val("");
+          $('#q3').val("");
+          $('#q4').val("");
+          $('#q5').val("");
+          $('#q6').val("");
+          $('#q7').val("");
+          $('#q8').val("");
+          $('#q9').val("");
+          $('#q10').val("");
+        } else {
+          alert("Please fill all questions and fields before submitting.")
+        }
+      });
     });
   </script>
 </html>

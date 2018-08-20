@@ -52,3 +52,7 @@ p {
 btn, .ow-btn:hover {
   background-color: #f99e1a;
 }
+
+.chosen-select {
+  visibility: hidden;
+}
