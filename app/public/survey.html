@@ -18,11 +18,11 @@
 
       <div class="row">
         <div class="col l12 l6">
-           <div class="card grey lighten-4">
+           <div class="card ow-grey">
              <div class="card-content">
                <span class="card-title">Overwatch Questions</span>
                <h6>About You</h6>
-                <!-- <form> -->
+                <form>
                    <label>Name:</label>
                    <input type="text" id="name" class="form-control" required>
 
@@ -38,8 +38,8 @@
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="2">2</option>
-                      <option value="3">5 (Strongly Agree)</option>
+                      <option value="4">2</option>
+                      <option value="5">5 (Strongly Agree)</option>
                     </select>
                   </div>
 
@@ -155,8 +155,8 @@
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="2">2</option>
-                      <option value="3">5 (Strongly Agree)</option>
+                      <option value="4">2</option>
+                      <option value="5">5 (Strongly Agree)</option>
                     </select>
                   </div>
 
@@ -169,15 +169,15 @@
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="2">2</option>
-                      <option value="3">5 (Strongly Agree)</option>
+                      <option value="4">2</option>
+                      <option value="5">5 (Strongly Agree)</option>
                     </select>
                   </div>
-                <!-- </form> -->
+                </form>
              </div>
 
              <div class="card-action">
-              <a href="/survey" id="submit" class="waves-effect waves-light btn blue-grey"><i class="material-icons right dp48">question_answer</i>Go to survey</a>
+              <a href="/survey" id="submit" class="waves-effect waves-light btn ow-btn"><i class="material-icons right dp48">question_answer</i>Submit survey</a>
             </div>
           </div>
         </div>
@@ -185,23 +185,22 @@
     </main>
 
     <!-- Modal -->
-    <div id="results-modal" class="modal fade" role="dialog">
+    <div id="modal1" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close waves-effect waves-light btn blue-grey" data-dismiss="modal">&times;</button>
             <h2 class="modal-title">Best Match</h2>
           </div>
 
           <div class="modal-body">
-            <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt="">
+            <h2 id="userMatch"></h2>
+            <img id="userMatchImage" src="" alt="">
           </div>
 
           <div class="modal-footer">
-            <button type="button" cclass="waves-effect waves-light btn blue-grey" data-dismiss="modal">Close</button>
+            <a href="#!" data-dismiss="modal" class="modal-close waves-effect waves-light btn ow-btn white-text">Close</a>
           </div>
         </div>
 
@@ -214,23 +213,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="js/init.js"></script>
   <script type="text/javascript">
-    $('#submit').on('click', function() {
-      let values = [];
-      let name = $('#name').val();
-      let photoUrl = $('#photo').val();
-
-      for (let i = 1; i <= 10; i++) {
-        if (!isNaN(parseInt($("#q" + i + " option:selected").attr('value'))))
-
-        values.push(parseInt($("#q" + i + " option:selected").attr('value')));
+    $('#submit').on('click', function(event) {
+      event.preventDefault();
+      
+      // Gather user inputs
+      let userInput = {
+        name: $('#name').val().trim(),
+        photoUrl: $('#photo').val().trim(),
+        values:[
+          $('#q1').val(),
+          $('#q2').val(),
+          $('#q3').val(),
+          $('#q4').val(),
+          $('#q5').val(),
+          $('#q6').val(),
+          $('#q7').val(),
+          $('#q8').val(),
+          $('#q9').val(),
+          $('#q10').val()
+        ]
       };
-
-      if (values.length == 10 && name != "" && photoUrl != "") {
-        console.log(values, name, photoUrl);
-        $('#results-modal').modal('open');
-      } else {
-        console.log("Please fill in all values.");
-      };
-    })
+      // console.log('userInput = ' + JSON.stringify(userInput));
+      // Add user inputs to friends list
+      $.post('/api/friends', userInput)
+          .done(function(data) {
+            // console.log('response = ' + JSON.stringify(data));
+            // Set the name and image values of friend match
+            $('#userMatch').html(data.matchName);
+          $("#userMatchImage").attr("src", data.matchImage);
+          // Pop open the modal dialog
+            $('#modal1').modal('open');
+          });
+    });
   </script>
 </html>

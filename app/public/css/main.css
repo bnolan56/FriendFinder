@@ -7,3 +7,48 @@ body {
 select {
   display: inline-block;
 }
+
+.ow-grey {
+  background-color: #fff;
+}
+
+/*** Typography ***/
+
+@font-face {
+    font-family: bignoodletoo;
+    src: url(../fonts/bignoodletoo.woff);
+}
+
+@font-face {
+    font-family: Koverwatch;
+    src: url(../fonts/koverwatch.ttf);
+}
+
+
+span, h6, h2 {
+  font-family: 'bignoodletoo', sans-sans-serif;
+}
+
+.card-title {
+  font-size: 36px !important;
+  color: #f99e1a;
+}
+
+h6 {
+  font-size: 26px;
+  color: #218ffe;
+}
+
+p {
+  font-family: 'Koverwatch', sans-serif;
+  font-size: 22px;
+  color: #405275;
+}
+
+.ow-btn {
+  background-color: #f99e1a;
+}
+
+btn, .ow-btn:hover {
+  background-color: #f99e1a;
+}
