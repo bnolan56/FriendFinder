@@ -1,9 +1,8 @@
-$(document).ready(function() {
-  $("#submit").on("click", function() {
+$(document).ready(function () {
+  $("#submit").on("click", function () {
     console.log('submit button has been clicked');
     event.preventDefault();
-
-    //form validation
+    // form validation
     function validateForm() {
       let isValid = true;
 
@@ -21,7 +20,7 @@ $(document).ready(function() {
 
       return isValid;
     }
-    //if everything is filled
+    // if everything is filled
     if (validateForm() == true) {
       //creates a new friend from the values submitted
       let userInput = {
@@ -41,15 +40,24 @@ $(document).ready(function() {
         ]
       };
 
-      console.log('userInput = ' + JSON.stringify(userInput));
+      // console.log('userInput = ' + JSON.stringify(userInput));
       //Grabs current URL of website
-      let currentURL = window.location.origin;
+
+      // let currentURL = window.location.origin;
 
       // POSTs to api/friends
-      $.post(currentURL + "/api/friends", userInput, function(data) {
-        $("#name").html(data.name);
-        $("#photo").attr("src", data.photoUrl);
-      });
+      // $.post(currentURL + "/api/friends", userInput, function(data) {
+      //   $("#name").html(data.name);
+      //   $("#photo").attr("src", data.photoUrl);
+      // });
+
+      $.post('/api/friends/', userInput, (data) => {
+        if (data) {
+          console.log(data)
+        } else (
+          console.log('err or whatevs')
+        )
+      })
 
       // Show the modal with the best match
       $('#modal1').modal();

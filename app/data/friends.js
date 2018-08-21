@@ -1,7 +1,7 @@
 // Exports for data arrays
 // ===========================================
 
-// Data structure that will store the friends data
+// Data structure that will store the hero data
 let heroesArray = [
 	{
 		name: 'Tracer',

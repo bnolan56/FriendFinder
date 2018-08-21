@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 3306;
 
 const app = express();
 
-// API App uses express and parses json data
+// uses express and parses json data
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
 app.use(express.static('./app/public'));
 
@@ -19,4 +20,3 @@ require('./app/routes/html-routes.js')(app);
 app.listen(PORT, function () {
 console.log(`Listening on ${PORT}`);
 });
- 
