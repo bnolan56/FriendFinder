@@ -8,13 +8,13 @@ let heroesArray = [
 		photoUrl: '../images/tracer.png',
 		values: [
 			'1',
+			'1',
+			'5',
 			'5',
 			'5',
 			'1',
 			'5',
 			'5',
-			'1',
-			'1',
 			'1',
 			'5'
 		]
@@ -23,15 +23,15 @@ let heroesArray = [
 		name: 'Hanzo',
 		photoUrl: '../images/hanzo.png',
 		values: [
-			'2',
-			'4',
+			'1',
+			'5',
+			'5',
 			'1',
 			'1',
 			'1',
-			'1',
-			'1',
-			'2',
-			'1',
+			'3',
+			'3',
+			'5',
 			'5'
 		]
 	},

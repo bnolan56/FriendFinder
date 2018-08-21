@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#submit").on("click", function () {
-    console.log('submit button has been clicked');
-    event.preventDefault();
+      console.log('submit button has been clicked');
+      event.preventDefault();
     // form validation
     function validateForm() {
       let isValid = true;
@@ -40,17 +40,6 @@ $(document).ready(function () {
         ]
       };
 
-      // console.log('userInput = ' + JSON.stringify(userInput));
-      //Grabs current URL of website
-
-      // let currentURL = window.location.origin;
-
-      // POSTs to api/friends
-      // $.post(currentURL + "/api/friends", userInput, function(data) {
-      //   $("#name").html(data.name);
-      //   $("#photo").attr("src", data.photoUrl);
-      // });
-
       $.post('/api/friends/', userInput, (data) => {
         if (data) {
           console.log(data)
@@ -60,6 +49,7 @@ $(document).ready(function () {
       })
 
       // Show the modal with the best match
+      // NOT WORKING: NEEDS TO TRIGGER MODAL THAT SHOWS DATA THAT LOGS IN CONSOLE FOR HERO COMPATIBILITY
       $('#modal1').modal();
 
       //clears form once submitted
